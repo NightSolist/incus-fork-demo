@@ -43,6 +43,8 @@ type NetworkPut struct {
 	//
 	// API extension: entity_description
 	Description string `json:"description" yaml:"description"`
+
+	Priority int `json:"priority,omitempty" yaml:"priority,omitempty"`
 }
 
 // NetworkStatusPending network is pending creation on other cluster nodes.
