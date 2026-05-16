@@ -42,8 +42,9 @@ type NetworkPut struct {
 	// Example: My new bridge
 	//
 	// API extension: entity_description
-	Description string `json:"description" yaml:"description"`
-	Priority    int    `json:"priority,omitempty" yaml:"priority,omitempty"`
+	Description string              `json:"description" yaml:"description"`
+	Priority    int                 `json:"priority,omitempty" yaml:"priority,omitempty"`
+	AllowedTags map[string][]string `json:"allowed_tags,omitempty" yaml:"allowed_tags,omitempty"`
 }
 
 // NetworkStatusPending network is pending creation on other cluster nodes.
