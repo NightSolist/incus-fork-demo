@@ -34,6 +34,12 @@ type NetworkPost struct {
 //
 // API extension: network.
 
+// NetworkAddress описывает административную точку доступа сети
+type NetworkAddress struct {
+	IP   string `json:"ip"`
+	Port int    `json:"port,omitempty"`
+}
+
 type NetworkPut struct {
 	// Network configuration map (refer to doc/networks.md)
 	// Example: {"ipv4.address": "10.0.0.1/24", "ipv4.nat": "true", "ipv6.address": "none"}
@@ -44,6 +50,7 @@ type NetworkPut struct {
 	//
 	// API extension: entity_description
 	Description string `json:"description" yaml:"description"`
+	Priority    int    `json:"priority,omitempty" yaml:"priority,omitempty"`
 }
 
 // NetworkStatusPending network is pending creation on other cluster nodes.
